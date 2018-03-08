@@ -28,6 +28,10 @@ module Inbox
         location.join(email_pathname).delete
       end
     end
+
+    def settings
+      {}
+    end
   end
 
   ActionMailer::Base.add_delivery_method :inbox, Inbox::FileDelivery, Pathname.new("#{Dir.tmpdir}/mails")
